@@ -1,0 +1,19 @@
+syntax = "proto3";
+package ecommerce;
+option go_package = "./";
+
+service ProductInfo {
+    rpc addProduct(Product) returns (ProductID);
+    rpc getProduct(ProductID) returns (Product);
+}
+
+message ProductID {
+   string value = 1;
+}
+
+message Product {
+   string id = 1;
+   string name = 2;
+   string description = 3;
+   float price = 4;
+}
