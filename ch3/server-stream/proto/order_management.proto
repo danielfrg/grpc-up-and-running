@@ -9,6 +9,9 @@ package ecommerce;
 service OrderManagement {
     // Unary
     rpc getOrder(google.protobuf.StringValue) returns (Order);
+
+    // Server streaming
+    rpc searchOrders(google.protobuf.StringValue) returns (stream Order);
 }
 
 message Order {
